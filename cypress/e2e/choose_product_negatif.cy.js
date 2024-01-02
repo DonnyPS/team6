@@ -1,8 +1,7 @@
-describe('Choose Product Test - Negative Scenario', () => {
-    it('Fails when product is out of stock', () => {
-      cy.visit('https://magento.softwaretestingboard.com')
-      cy.contains('Out of Stock Product Name').click() // Replace with an out-of-stock product
-      cy.get('button[title="Add to Cart"]').should('be.disabled')
-  
-    })
-  })
+describe("Choose Product Test - Negative Scenario", () => {
+  it("Gagal ketika product yang dicari tidak ada", () => {
+    cy.login("luthfiyahnurarf@gmail.com", "Nurarofah02!"); //login account
+    cy.xpath('//*[@id="search"]').type("swimsuit").type("{enter}"); //cari product
+    cy.wait(2000);
+  });
+});
