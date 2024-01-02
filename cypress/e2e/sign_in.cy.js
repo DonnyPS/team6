@@ -1,0 +1,20 @@
+describe('Sign In Test', () => {
+  //var faker = require('faker')
+  //var firstName = faker.name.firstName()
+  //var lastName = faker.name.lastName()
+  //var Email = faker.internet.email()
+  //var Password = faker.internet.password()
+
+  it('Success Sign In', () => {
+    cy.visit('https://magento.softwaretestingboard.com/customer/account/create/')
+    //cy.get('#firstname').type(firstName)
+    //cy.get('#lastname').type(lastName)
+    //cy.get('#email_address').type(Email)
+    cy.get('#firstname').type('firstName')
+    cy.get('#lastname').type('lastName')
+    cy.get('#email_address').type('user@example.com')
+    cy.get('#password').type('Password123')
+    cy.get('#password-confirmation').type('Password123')
+    cy.get('button[title="Create an Account"]').click()
+  })
+})
