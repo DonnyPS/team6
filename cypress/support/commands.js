@@ -10,6 +10,13 @@ Cypress.Commands.add("login", (email, password) => {
   cy.xpath('//*[@id="send2"]').click();
 });
 
+Cypress.Commands.add("login_simple", (email, password) => {
+  cy.visit("/customer/account/login/");
+  cy.get('#email').type(email);
+  cy.get('#pass').type(password);
+  cy.get('#send2').click();
+});
+
 // Command untuk membuat akun
 Cypress.Commands.add("createAccount", (email, password) => {
   cy.visit("/customer/account/create/");
